@@ -29,3 +29,7 @@ RUN python ./setup.py develop
 
 # run as non priviledged user
 USER app
+
+EXPOSE 5000
+#Run App
+CMD     /usr/local/bin/gunicorn --bind localhost:5000 syncserver.wsgi_app
